@@ -13,6 +13,9 @@ import { useLanguage } from "@/lib/language-context"
 
 export function ContactSection() {
   const { language, translations } = useLanguage()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const [formData, setFormData] = useState({
     name: "",
@@ -22,19 +25,45 @@ export function ContactSection() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: "",
-    })
-    alert(translations.contact.successMessage)
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        })
+        // Show success message for 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000)
+      } else {
+        setSubmitStatus('error')
+        setErrorMessage(result.error || 'Error al enviar el formulario')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+      setErrorMessage('Error de conexión. Por favor, inténtalo de nuevo.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -198,11 +227,32 @@ export function ContactSection() {
                   />
                 </div>
 
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-md text-green-800 text-sm md:text-base">
+                    ✅ {translations.contact.successMessage}
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-md text-red-800 text-sm md:text-base">
+                    ❌ {errorMessage}
+                  </div>
+                )}
+
                 <Button
                   type="submit"
-                  className="w-full text-sm md:text-base py-2 md:py-3"
+                  disabled={isSubmitting}
+                  className="w-full text-sm md:text-base py-2 md:py-3 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {translations.contact.form.submit}
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-current mr-2"></div>
+                      {language === 'es' ? 'Enviando...' : 'Sending...'}
+                    </>
+                  ) : (
+                    translations.contact.form.submit
+                  )}
                 </Button>
               </form>
             </CardContent>

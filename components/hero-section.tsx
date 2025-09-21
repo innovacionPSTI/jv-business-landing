@@ -24,13 +24,18 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center mb-12 lg:mb-16">
-            <Button size="lg" className="text-sm lg:text-base">
+            <Button
+              size="lg"
+              className="text-sm lg:text-base"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               {t("hero.cta")}
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="text-sm lg:text-base"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               {t("hero.contact")}
             </Button>
@@ -38,16 +43,22 @@ export function HeroSection() {
 
           {/* Contact Info Cards */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-            <div className="bg-card p-4 lg:p-6 rounded-lg border border-border">
+            <div
+              className="bg-card p-4 lg:p-6 rounded-lg border border-border cursor-pointer hover:shadow-lg transition-shadow"
+              onClick={() => window.open('tel:+17864439212', '_self')}
+            >
               <Phone className="h-6 w-6 lg:h-8 lg:w-8 text-primary mx-auto mb-3 lg:mb-4" />
               <h3 className="font-semibold text-card-foreground mb-2 text-sm lg:text-base">Phone</h3>
               <p className="text-muted-foreground text-sm lg:text-base">(786) 443-9212</p>
             </div>
 
-            <div className="bg-card p-4 lg:p-6 rounded-lg border border-border">
+            <div
+              className="bg-card p-4 lg:p-6 rounded-lg border border-border cursor-pointer hover:shadow-lg transition-shadow"
+              onClick={() => window.open('mailto:info@jvbusinessservices.com', '_self')}
+            >
               <Mail className="h-6 w-6 lg:h-8 lg:w-8 text-primary mx-auto mb-3 lg:mb-4" />
               <h3 className="font-semibold text-card-foreground mb-2 text-sm lg:text-base">Email</h3>
-              <p className="text-muted-foreground text-sm lg:text-base break-all">jvbusiness.services@yahoo.com</p>
+              <p className="text-muted-foreground text-sm lg:text-base break-all">info@jvbusinessservices.com</p>
             </div>
 
             <div className="bg-card p-4 lg:p-6 rounded-lg border border-border sm:col-span-2 lg:col-span-1">

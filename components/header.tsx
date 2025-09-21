@@ -19,13 +19,16 @@ export function Header() {
       <div className="container mx-auto px-4 py-3 lg:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div
+            className="flex items-center space-x-2 cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             <Image
               src={theme === "dark" ? "/images/jv-logo-yellow.jpeg" : "/images/jv-logo.png"}
               alt="JV Business Services LLC"
               width={60}
               height={60}
-              className="h-10 w-auto lg:h-12"
+              className="h-10 w-auto lg:h-12 hover:opacity-80 transition-opacity"
             />
           </div>
 
@@ -51,7 +54,10 @@ export function Header() {
               <span>{t("nav.languageSwitch")}</span>
             </button>
             <ThemeToggle />
-            <Button size="sm">
+            <Button
+              size="sm"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               {t("hero.cta")}
             </Button>
           </nav>
@@ -100,7 +106,15 @@ export function Header() {
                 </button>
                 <ThemeToggle />
               </div>
-              <Button className="w-full">{t("hero.cta")}</Button>
+              <Button
+                className="w-full"
+                onClick={() => {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+                  setIsMenuOpen(false)
+                }}
+              >
+                {t("hero.cta")}
+              </Button>
             </div>
           </nav>
         )}
