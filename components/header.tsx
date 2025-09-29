@@ -40,6 +40,12 @@ export function Header() {
             >
               {t("nav.services")}
             </Link>
+            <Link
+              href="#clients"
+              className="text-foreground hover:text-primary transition-colors text-sm xl:text-base"
+            >
+              {t("nav.clients")}
+            </Link>
             <Link href="#about" className="text-foreground hover:text-primary transition-colors text-sm xl:text-base">
               {t("nav.about")}
             </Link>
@@ -78,6 +84,13 @@ export function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.services")}
+              </Link>
+              <Link
+                href="#clients"
+                className="text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t("nav.clients")}
               </Link>
               <Link
                 href="#about"

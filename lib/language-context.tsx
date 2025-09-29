@@ -7,6 +7,7 @@ type Language = "en" | "es"
 interface Translations {
   nav: {
     services: string
+    clients: string
     about: string
     contact: string
     languageSwitch: string
@@ -28,6 +29,10 @@ interface Translations {
     maintenance: { title: string; desc: string }
     pressure: { title: string; desc: string }
     specialized: { title: string; desc: string }
+  }
+  clients: {
+    title: string
+    subtitle: string
   }
   about: {
     title: string
@@ -90,6 +95,7 @@ const translations: Record<Language, Translations> = {
   en: {
     nav: {
       services: "Services",
+      clients: "Our Clients",
       about: "About",
       contact: "Contact",
       languageSwitch: "Español",
@@ -133,6 +139,10 @@ const translations: Record<Language, Translations> = {
         title: "Specialized Cleaning",
         desc: "Carpet, window, kitchen, and bathroom cleaning with latest technology",
       },
+    },
+    clients: {
+      title: "Our Clients",
+      subtitle: "Trusted by industry leaders and prestigious events worldwide",
     },
     about: {
       title: "Why Choose JV Business Services",
@@ -221,6 +231,7 @@ const translations: Record<Language, Translations> = {
   es: {
     nav: {
       services: "Servicios",
+      clients: "Nuestros Clientes",
       about: "Nosotros",
       contact: "Contacto",
       languageSwitch: "English",
@@ -264,6 +275,10 @@ const translations: Record<Language, Translations> = {
         title: "Limpieza Especializada",
         desc: "Limpieza de alfombras, ventanas, cocinas y baños con la última tecnología",
       },
+    },
+    clients: {
+      title: "Nuestros Clientes",
+      subtitle: "Confianza de líderes de la industria y eventos prestigiosos a nivel mundial",
     },
     about: {
       title: "Por Qué Elegir JV Business Services",
