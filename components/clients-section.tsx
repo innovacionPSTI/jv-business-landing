@@ -95,7 +95,7 @@ export function ClientsSection() {
         </div>
 
         <div className="relative overflow-hidden">
-          <div className="flex animate-scroll">
+          <div className="flex animate-scroll-infinite hover:animate-pause">
             {/* First set of logos */}
             {clients.map((client, index) => (
               <div
@@ -129,25 +129,6 @@ export function ClientsSection() {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-scroll {
-          animation: scroll 30s linear infinite;
-        }
-
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   )
 }

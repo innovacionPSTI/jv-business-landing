@@ -135,3 +135,23 @@
     scroll-padding-top: 80px;
   }
 }
+
+@layer utilities {
+  /* Client logos scrolling animation */
+  @keyframes scroll-infinite {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-infinite {
+    animation: scroll-infinite 30s linear infinite;
+  }
+
+  .animate-pause:hover {
+    animation-play-state: paused;
+  }
+}
