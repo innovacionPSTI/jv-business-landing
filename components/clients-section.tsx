@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/lib/language-context"
 import { useTheme } from "next-themes"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 
 interface ClientLogo {
@@ -81,6 +82,14 @@ const clients: ClientLogo[] = [
 export function ClientsSection() {
   const { t } = useLanguage()
   const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Use dark theme as default when not mounted (since we set defaultTheme="dark")
+  const currentTheme = mounted ? theme : "dark"
 
   return (
     <section id="clients" className="py-16 lg:py-24 bg-muted/30">
@@ -103,7 +112,7 @@ export function ClientsSection() {
                 className="flex-shrink-0 w-40 h-24 mx-4 flex items-center justify-center"
               >
                 <Image
-                  src={theme === "dark" ? client.whiteLogo : client.blackLogo}
+                  src={currentTheme === "dark" ? client.whiteLogo : client.blackLogo}
                   alt={client.name}
                   width={120}
                   height={60}
@@ -118,7 +127,7 @@ export function ClientsSection() {
                 className="flex-shrink-0 w-40 h-24 mx-4 flex items-center justify-center"
               >
                 <Image
-                  src={theme === "dark" ? client.whiteLogo : client.blackLogo}
+                  src={currentTheme === "dark" ? client.whiteLogo : client.blackLogo}
                   alt={client.name}
                   width={120}
                   height={60}
