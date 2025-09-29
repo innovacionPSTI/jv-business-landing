@@ -148,7 +148,7 @@
   }
 
   .animate-scroll-infinite {
-    animation: scroll-infinite 30s linear infinite;
+    animation: scroll-infinite 60s linear infinite;
   }
 
   .animate-pause:hover {

@@ -95,18 +95,18 @@ export function ClientsSection() {
         </div>
 
         <div className="relative overflow-hidden">
-          <div className="flex animate-scroll-infinite hover:animate-pause">
+          <div className="flex animate-scroll-infinite hover:animate-pause" style={{ width: 'max-content' }}>
             {/* First set of logos */}
             {clients.map((client, index) => (
               <div
                 key={`first-${index}`}
-                className="flex-shrink-0 w-48 h-24 mx-6 flex items-center justify-center"
+                className="flex-shrink-0 w-40 h-24 mx-4 flex items-center justify-center"
               >
                 <Image
                   src={theme === "dark" ? client.whiteLogo : client.blackLogo}
                   alt={client.name}
-                  width={150}
-                  height={80}
+                  width={120}
+                  height={60}
                   className="max-w-full max-h-full object-contain filter opacity-70 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
@@ -115,13 +115,13 @@ export function ClientsSection() {
             {clients.map((client, index) => (
               <div
                 key={`second-${index}`}
-                className="flex-shrink-0 w-48 h-24 mx-6 flex items-center justify-center"
+                className="flex-shrink-0 w-40 h-24 mx-4 flex items-center justify-center"
               >
                 <Image
                   src={theme === "dark" ? client.whiteLogo : client.blackLogo}
                   alt={client.name}
-                  width={150}
-                  height={80}
+                  width={120}
+                  height={60}
                   className="max-w-full max-h-full object-contain filter opacity-70 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
