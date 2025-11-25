@@ -24,7 +24,7 @@ export function Header() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <Image
-              src={theme === "dark" ? "/images/jv-logo-yellow.jpeg" : "/images/jv-logo.png"}
+              src={theme === "light" ? "/images/jv-logo.png" : "/images/jv-logo-yellow.jpeg"}
               alt="JV Business Services LLC"
               width={60}
               height={60}
