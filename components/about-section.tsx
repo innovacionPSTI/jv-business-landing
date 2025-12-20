@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Users, Clock, Award, Shield } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
+import Image from "next/image"
 
 export function AboutSection() {
   const { t } = useLanguage()
@@ -33,6 +34,30 @@ export function AboutSection() {
   return (
     <section id="about" className="py-16 lg:py-20 bg-muted">
       <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4 lg:mb-6 text-balance">
+            {t("about.mainTitle")}
+          </h2>
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+            {t("about.subtitle")}
+          </p>
+        </div>
+
+        {/* Hero Image */}
+        <div className="mb-12 lg:mb-16">
+          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden shadow-2xl">
+            <Image
+              src="/images/staff-working.jpeg"
+              alt="JV Business Services staff working at a professional event"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
+              priority
+            />
+          </div>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="order-2 lg:order-1">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4 lg:mb-6 text-balance">

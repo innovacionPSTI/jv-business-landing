@@ -35,6 +35,8 @@ interface Translations {
     subtitle: string
   }
   about: {
+    mainTitle: string
+    subtitle: string
     title: string
     experience: { title: string; desc: string }
     staff: { title: string; desc: string }
@@ -145,6 +147,8 @@ const translations: Record<Language, Translations> = {
       subtitle: "Trusted by industry leaders and prestigious events worldwide",
     },
     about: {
+      mainTitle: "About Us",
+      subtitle: "Professional excellence in every service, serving South Florida since 2005",
       title: "Why Choose JV Business Services",
       experience: {
         title: "Professional Experience",
@@ -281,6 +285,8 @@ const translations: Record<Language, Translations> = {
       subtitle: "Confianza de líderes de la industria y eventos prestigiosos a nivel mundial",
     },
     about: {
+      mainTitle: "Sobre Nosotros",
+      subtitle: "Excelencia profesional en cada servicio, sirviendo al sur de Florida desde 2005",
       title: "Por Qué Elegir JV Business Services",
       experience: {
         title: "Experiencia Profesional",

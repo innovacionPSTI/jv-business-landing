@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, Clock } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
+import Image from "next/image"
 
 export function HeroSection() {
   const { t } = useLanguage()
@@ -14,6 +15,17 @@ export function HeroSection() {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 lg:mb-6 text-balance leading-tight">
             {t("hero.title")}
           </h1>
+
+          <div className="flex justify-center mb-6 lg:mb-8">
+            <Image
+              src="/images/logo-big.jpeg"
+              alt="JV Business Services"
+              width={200}
+              height={200}
+              className="rounded-lg"
+              priority
+            />
+          </div>
 
           <p className="text-lg sm:text-xl lg:text-2xl text-primary font-semibold mb-4 lg:mb-6 text-balance">
             {t("hero.subtitle")}

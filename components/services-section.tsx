@@ -66,7 +66,7 @@ export function ServicesSection() {
 
         {/* Video Gallery */}
         <div className="mb-12 lg:mb-16">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+          <div className="grid md:grid-cols-2 gap-4 lg:gap-6 max-w-4xl mx-auto">
             <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <video
                 className="w-full h-full object-cover"
@@ -78,16 +78,6 @@ export function ServicesSection() {
               </video>
             </div>
             <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <video
-                className="w-full h-full object-cover"
-                controls
-                preload="metadata"
-              >
-                <source src="/videos/latin-grammy-sanitation.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-1">
               <video
                 className="w-full h-full object-cover"
                 controls
