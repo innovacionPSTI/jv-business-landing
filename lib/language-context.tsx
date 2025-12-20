@@ -38,6 +38,9 @@ interface Translations {
     mainTitle: string
     subtitle: string
     title: string
+    description1: string
+    description2: string
+    highlights: string[]
     experience: { title: string; desc: string }
     staff: { title: string; desc: string }
     available: { title: string; desc: string }
@@ -150,6 +153,13 @@ const translations: Record<Language, Translations> = {
       mainTitle: "About Us",
       subtitle: "Professional excellence in every service, serving South Florida since 2005",
       title: "Why Choose JV Business Services",
+      description1: "We are driven by the intention to meet the market needs for commercial cleaning services. We have grown rapidly, coming to handle large accounts in the area we cover.",
+      description2: "Our good and timely service has always characterized us because we provide our customers with the coverage that requires their exact needs with personalized service, being managed by the owner.",
+      highlights: [
+        "Constantly trained staff",
+        "Specialized equipment and chemicals",
+        "Owner-managed service"
+      ],
       experience: {
         title: "Professional Experience",
         desc: "Years of experience in commercial and industrial services with the latest technology equipment.",
@@ -288,6 +298,13 @@ const translations: Record<Language, Translations> = {
       mainTitle: "Sobre Nosotros",
       subtitle: "Excelencia profesional en cada servicio, sirviendo al sur de Florida desde 2005",
       title: "Por Qué Elegir JV Business Services",
+      description1: "Nos impulsa la intención de satisfacer las necesidades del mercado en servicios de limpieza comercial. Hemos crecido rápidamente, llegando a manejar grandes cuentas en el área que cubrimos.",
+      description2: "Nuestro buen y oportuno servicio siempre nos ha caracterizado porque brindamos a nuestros clientes la cobertura que requieren sus necesidades exactas con un servicio personalizado, siendo gestionado por el propietario.",
+      highlights: [
+        "Personal constantemente capacitado",
+        "Equipos y químicos especializados",
+        "Servicio gestionado por el propietario"
+      ],
       experience: {
         title: "Experiencia Profesional",
         desc: "Años de experiencia en servicios comerciales e industriales con equipos de última tecnología.",

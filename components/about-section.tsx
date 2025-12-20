@@ -6,7 +6,7 @@ import { useLanguage } from "@/lib/language-context"
 import Image from "next/image"
 
 export function AboutSection() {
-  const { t } = useLanguage()
+  const { t, translations } = useLanguage()
 
   const features = [
     {
@@ -64,27 +64,19 @@ export function AboutSection() {
               {t("about.title")}
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-4 lg:mb-6 text-pretty">
-              We are driven by the intention to meet the market needs for commercial cleaning services. We have grown
-              rapidly, coming to handle large accounts in the area we cover.
+              {t("about.description1")}
             </p>
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-6 lg:mb-8 text-pretty">
-              Our good and timely service has always characterized us because we provide our customers with the coverage
-              that requires their exact needs with personalized service, being managed by the owner.
+              {t("about.description2")}
             </p>
 
             <div className="space-y-3 lg:space-y-4">
-              <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 lg:h-6 lg:w-6 text-primary mr-3 flex-shrink-0" />
-                <span className="text-foreground text-sm lg:text-base">Constantly trained staff</span>
-              </div>
-              <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 lg:h-6 lg:w-6 text-primary mr-3 flex-shrink-0" />
-                <span className="text-foreground text-sm lg:text-base">Specialized equipment and chemicals</span>
-              </div>
-              <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 lg:h-6 lg:w-6 text-primary mr-3 flex-shrink-0" />
-                <span className="text-foreground text-sm lg:text-base">Owner-managed service</span>
-              </div>
+              {translations.about.highlights.map((highlight: string, index: number) => (
+                <div key={index} className="flex items-center">
+                  <CheckCircle className="h-5 w-5 lg:h-6 lg:w-6 text-primary mr-3 flex-shrink-0" />
+                  <span className="text-foreground text-sm lg:text-base">{highlight}</span>
+                </div>
+              ))}
             </div>
           </div>
 
