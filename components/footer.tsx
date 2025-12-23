@@ -58,7 +58,7 @@ export function Footer() {
               </div>
               <div className="flex items-start space-x-2">
                 <Mail className="h-4 w-4 text-sidebar-primary flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-sidebar-foreground break-all">jvbusiness.services@yahoo.com</span>
+                <span className="text-sm text-sidebar-foreground break-all">info@jvbusinessservices.com</span>
               </div>
               <div className="text-sm text-sidebar-foreground">
                 <strong>Jaime Villegas</strong>

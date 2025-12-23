@@ -106,7 +106,7 @@ export function ContactSection() {
                   <Mail className="h-5 w-5 md:h-6 md:w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-foreground">Email</h4>
-                    <p className="text-muted-foreground break-all">jvbusiness.services@yahoo.com</p>
+                    <p className="text-muted-foreground break-all">info@jvbusinessservices.com</p>
                   </div>
                 </div>
 
